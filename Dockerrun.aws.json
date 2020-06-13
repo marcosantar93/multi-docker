@@ -1,6 +1,6 @@
 {
     "AWSEBDockerrunVersion": 2,
-    "containerDefinitions":[
+    "containerDefinitions": [
         {
             "name": "client",
             "image": "marcosantarcangelo/multi-client",
@@ -27,14 +27,17 @@
             "image": "marcosantarcangelo/multi-nginx",
             "hostname": "nginx",
             "essential": true,
-            "memory": 128,
             "portMappings": [
                 {
                     "hostPort": 80,
                     "containerPort": 80
                 }
             ],
-            "links": ["client", "server"]
+            "links": [
+                "client",
+                "server"
+            ],
+            "memory": 128
         }
     ]
 }
